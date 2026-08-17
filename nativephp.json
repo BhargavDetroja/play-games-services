@@ -1,0 +1,118 @@
+{
+    "name": "bhargavdetroja/nativephp-play-games-services",
+    "version": "1.0.0",
+    "description": "Google Play Games Services plugin for NativePHP Mobile — sign-in, leaderboards, and achievements on Android.",
+    "namespace": "PlayGamesServices",
+    "keywords": ["play-games-services", "google-play-games", "leaderboards", "achievements", "sign-in"],
+    "category": "social",
+    "license": "MIT",
+    "pricing": {
+        "type": "free"
+    },
+    "author": {
+        "name": "Bhargav Detroja",
+        "email": "",
+        "url": "https://github.com/bhargavdetroja"
+    },
+    "homepage": "https://github.com/bhargavdetroja/nativephp-play-games-services",
+    "repository": "https://github.com/bhargavdetroja/nativephp-play-games-services",
+    "funding": [],
+    "platforms": [
+        "android"
+    ],
+    "icon": "",
+    "screenshots": [],
+    "bridge_functions": [
+        {
+            "name": "PlayGamesServices.Initialize",
+            "android": "com.nativephp.plugins.playgamesservices.PlayGamesServicesFunctions.Initialize",
+            "description": "Initialize the Play Games SDK and silently sign in the player if already authenticated"
+        },
+        {
+            "name": "PlayGamesServices.SignIn",
+            "android": "com.nativephp.plugins.playgamesservices.PlayGamesServicesFunctions.SignIn",
+            "description": "Trigger the interactive Play Games sign-in flow"
+        },
+        {
+            "name": "PlayGamesServices.GetCurrentPlayer",
+            "android": "com.nativephp.plugins.playgamesservices.PlayGamesServicesFunctions.GetCurrentPlayer",
+            "description": "Fetch the signed-in player's profile"
+        },
+        {
+            "name": "PlayGamesServices.SubmitScore",
+            "android": "com.nativephp.plugins.playgamesservices.PlayGamesServicesFunctions.SubmitScore",
+            "description": "Submit a score to a leaderboard"
+        },
+        {
+            "name": "PlayGamesServices.ShowLeaderboard",
+            "android": "com.nativephp.plugins.playgamesservices.PlayGamesServicesFunctions.ShowLeaderboard",
+            "description": "Show the native UI for a single leaderboard"
+        },
+        {
+            "name": "PlayGamesServices.ShowAllLeaderboards",
+            "android": "com.nativephp.plugins.playgamesservices.PlayGamesServicesFunctions.ShowAllLeaderboards",
+            "description": "Show the native UI listing all leaderboards"
+        },
+        {
+            "name": "PlayGamesServices.UnlockAchievement",
+            "android": "com.nativephp.plugins.playgamesservices.PlayGamesServicesFunctions.UnlockAchievement",
+            "description": "Unlock a standard achievement"
+        },
+        {
+            "name": "PlayGamesServices.IncrementAchievement",
+            "android": "com.nativephp.plugins.playgamesservices.PlayGamesServicesFunctions.IncrementAchievement",
+            "description": "Increment an incremental achievement by a number of steps"
+        },
+        {
+            "name": "PlayGamesServices.ShowAchievements",
+            "android": "com.nativephp.plugins.playgamesservices.PlayGamesServicesFunctions.ShowAchievements",
+            "description": "Show the native achievements UI"
+        }
+    ],
+    "android": {
+        "min_version": 21,
+        "permissions": [
+            "android.permission.INTERNET"
+        ],
+        "meta_data": [
+            {
+                "name": "com.google.android.gms.games.APP_ID",
+                "value": "${PLAY_GAMES_APP_ID}"
+            }
+        ],
+        "repositories": [],
+        "dependencies": {
+            "implementation": [
+                "com.google.android.gms:play-services-games-v2:20.1.2"
+            ]
+        },
+        "activities": [],
+        "services": [],
+        "receivers": [],
+        "providers": []
+    },
+    "ios": {
+        "min_version": "14.0"
+    },
+    "assets": {
+        "android": [],
+        "ios": []
+    },
+    "secrets": [
+        "PLAY_GAMES_APP_ID"
+    ],
+    "events": [
+        "NativePHP\\PlayGamesServices\\Events\\SignedIn",
+        "NativePHP\\PlayGamesServices\\Events\\SignInFailed",
+        "NativePHP\\PlayGamesServices\\Events\\ScoreSubmitted",
+        "NativePHP\\PlayGamesServices\\Events\\ScoreSubmissionFailed",
+        "NativePHP\\PlayGamesServices\\Events\\AchievementUnlocked",
+        "NativePHP\\PlayGamesServices\\Events\\AchievementUnlockFailed",
+        "NativePHP\\PlayGamesServices\\Events\\AchievementIncremented",
+        "NativePHP\\PlayGamesServices\\Events\\AchievementIncrementFailed"
+    ],
+    "service_provider": "NativePHP\\PlayGamesServices\\PlayGamesServicesServiceProvider",
+    "hooks": {
+        "post_compile": "nativephp:play-games-services:post-compile"
+    }
+}

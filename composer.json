@@ -1,0 +1,39 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "bhargavdetroja/nativephp-play-games-services",
+    "description": "Google Play Games Services plugin for NativePHP Mobile — sign-in, leaderboards, and achievements on Android.",
+    "type": "nativephp-plugin",
+    "keywords": ["nativephp", "play-games-services", "google-play-games", "leaderboards", "achievements", "mobile", "laravel", "android"],
+    "homepage": "https://github.com/bhargavdetroja/nativephp-play-games-services",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bhargav Detroja",
+            "homepage": "https://github.com/bhargavdetroja"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "nativephp/mobile": "^3.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NativePHP\\PlayGamesServices\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NativePHP\\PlayGamesServices\\PlayGamesServicesServiceProvider"
+            ],
+            "aliases": {
+                "PlayGamesServices": "NativePHP\\PlayGamesServices\\Facades\\PlayGamesServices"
+            }
+        },
+        "nativephp": {
+            "manifest": "nativephp.json"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
