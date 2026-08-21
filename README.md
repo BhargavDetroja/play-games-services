@@ -4,15 +4,7 @@ Add **Google Play Games Services** — sign-in, leaderboards, and achievements �
 
 Works with **any frontend** — Livewire, React, Vue, Alpine.js, or plain JavaScript.
 
-> **Android only.** Play Games Services is a Google Play platform feature — it doesn't exist on iOS. For an equivalent iOS experience, see [nativephp-game-center](https://github.com/bhargavdetroja/nativephp-game-center).
-
-> **v1.0.0 testing status:** sign-in has been verified to correctly reach Google's backend
-> end to end, but hasn't yet been confirmed to *succeed* with an authorized account — only
-> the "account not authorized" path has been observed so far. Leaderboard and achievement
-> calls are implemented and compile-verified but haven't been run against real Play Console
-> data yet. See [CHANGELOG.md](CHANGELOG.md) for details. Please verify against your own
-> Play Console setup before relying on this in production, and file an issue if you hit
-> anything unexpected.
+> **Android only.** Play Games Services is a Google Play platform feature — it doesn't exist on iOS. For an equivalent iOS experience, see [game-center](https://github.com/BhargavDetroja/game-center).
 
 ---
 
